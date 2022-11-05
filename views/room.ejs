@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    const ROOM_ID = "<%= roomId %>";
+  </script>
+  <script defer src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
+  <script defer src="/socket.io/socket.io.js"></script>
+  <script defer src="script.js"></script>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+    }
+    fieldset {
+      width: 49vw;
+    }
+    fieldset > select {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <fieldset>
+    <legend>Lobby <%= roomId %></legend>
+
+    <select multiple id="roomMembers">
+
+    </select>
+  </fieldset>
+
+  <fieldset>
+    <legend>Command boops</legend>
+    <button type="button" onclick="sendCMD()">Boop</button>
+    <select multiple id="debugCommands">
+
+    </select>
+  </fieldset>
+
+</body>
+</html>
